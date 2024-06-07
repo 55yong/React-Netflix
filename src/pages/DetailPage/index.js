@@ -19,7 +19,12 @@ const DetailPage = () => {
     fetchData();
   }, [movieId]);
 
-  if (!movie) return <div>...loading</div>;
+  if (!movie)
+    return (
+      <section>
+        <img className="modal__poster-img" src={"no_img.jpg"} alt="poster" />
+      </section>
+    );
   else {
     return (
       <section>

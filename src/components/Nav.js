@@ -21,6 +21,11 @@ const Nav = () => {
     };
   }, []);
 
+  const handleGoHome = () => {
+    navigate("/");
+    setSearchValue("");
+  };
+
   const handleChange = (e) => {
     setSearchValue(e.target.value);
     navigate(`/search?q=${e.target.value}`);
@@ -32,7 +37,7 @@ const Nav = () => {
         alt="Netflix logo"
         src="https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png"
         className="nav__logo"
-        onClick={() => window.location.reload()}
+        onClick={handleGoHome}
       />
       <input
         value={searchValue}
